@@ -772,7 +772,6 @@ CONFIG_FEED_packages=y
 CONFIG_FEED_luci=y
 CONFIG_FEED_routing=y
 CONFIG_FEED_telephony=y
-CONFIG_FEED_helloworld=y
 
 #
 # Base system
@@ -5295,7 +5294,7 @@ CONFIG_PACKAGE_luci-app-accesscontrol=y
 # CONFIG_PACKAGE_luci-app-amule is not set
 # CONFIG_PACKAGE_luci-app-apinger is not set
 # CONFIG_PACKAGE_luci-app-aria2 is not set
-CONFIG_PACKAGE_luci-app-arpbind=y
+# CONFIG_PACKAGE_luci-app-arpbind is not set
 # CONFIG_PACKAGE_luci-app-attendedsysupgrade is not set
 CONFIG_PACKAGE_luci-app-autoreboot=y
 # CONFIG_PACKAGE_luci-app-babeld is not set
@@ -5318,7 +5317,7 @@ CONFIG_PACKAGE_luci-app-autoreboot=y
 # CONFIG_PACKAGE_luci-app-cshark is not set
 # CONFIG_PACKAGE_luci-app-dawn is not set
 # CONFIG_PACKAGE_luci-app-dcwapd is not set
-CONFIG_PACKAGE_luci-app-ddns=y
+# CONFIG_PACKAGE_luci-app-ddns is not set
 # CONFIG_PACKAGE_luci-app-ddns-go is not set
 # CONFIG_PACKAGE_luci-app-diag-core is not set
 # CONFIG_PACKAGE_luci-app-diskman is not set
@@ -5404,14 +5403,14 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client  is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
@@ -5426,19 +5425,19 @@ CONFIG_PACKAGE_luci-app-passwall2=y
 #
 # Configuration
 #
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat is not set
 CONFIG_PACKAGE_luci-app-passwall2_Iptables_Transparent_Proxy=y
 CONFIG_PACKAGE_luci-app-passwall2_Nftables_Transparent_Proxy=y
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy=y
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria=y
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Client=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client  is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client is not set
 # CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Server is not set
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Server=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs is not set
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_SingBox=y
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client=y
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin=y
@@ -5489,11 +5488,11 @@ CONFIG_PACKAGE_luci-app-smartdns=y
 # CONFIG_PACKAGE_luci-app-squid is not set
 # CONFIG_PACKAGE_luci-app-sshtunnel is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus is not set
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server is not set
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
@@ -5623,7 +5622,6 @@ CONFIG_PACKAGE_luci-lib-nixio=y
 
 CONFIG_PACKAGE_default-settings=y
 CONFIG_PACKAGE_luci-i18n-accesscontrol-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-arpbind-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-base-ar is not set
 # CONFIG_PACKAGE_luci-i18n-base-bg is not set
@@ -5659,40 +5657,6 @@ CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-base-vi is not set
 CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-base-zh-tw is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ar is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-bg is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-bn is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ca is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-cs is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-da is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-de is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-el is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-es is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-fi is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-fr is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-he is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-hi is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-hu is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-it is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ja is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ko is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-lt is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-mr is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ms is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-nl is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-no is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-pl is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-pt is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-pt-br is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ro is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-ru is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-sk is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-sv is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-tr is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-uk is not set
-# CONFIG_PACKAGE_luci-i18n-ddns-vi is not set
-CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
-# CONFIG_PACKAGE_luci-i18n-ddns-zh-tw is not set
 CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-firewall-ar is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-bg is not set
@@ -6664,21 +6628,21 @@ CONFIG_PACKAGE_naiveproxy=y
 # CONFIG_PACKAGE_radicale2 is not set
 # CONFIG_PACKAGE_radicale2-examples is not set
 # CONFIG_PACKAGE_redsocks2 is not set
-CONFIG_PACKAGE_shadow-tls=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-server=y
+# CONFIG_PACKAGE_shadow-tls is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-local is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-server is not set
 # CONFIG_PACKAGE_shadowsocks-libev-ss-tunnel is not set
 # CONFIG_PACKAGE_shadowsocks-rust-sslocal is not set
 # CONFIG_PACKAGE_shadowsocks-rust-ssmanager is not set
 # CONFIG_PACKAGE_shadowsocks-rust-ssserver is not set
 # CONFIG_PACKAGE_shadowsocks-rust-ssservice is not set
 # CONFIG_PACKAGE_shadowsocks-rust-ssurl is not set
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-check=y
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-check is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-local is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-ssr-nat is not set
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir=y
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-server=y
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-server is not set
 CONFIG_PACKAGE_sing-box=y
 CONFIG_SING_BOX_BUILD_ACME=y
 CONFIG_SING_BOX_BUILD_CLASH_API=y
