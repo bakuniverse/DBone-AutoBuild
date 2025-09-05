@@ -20,9 +20,7 @@ on:
         default: immortalwrt_x86_64
         options:
           - Lean_x86_64
-          - Lean_x86_64_Long
           - immortalwrt_x86_64
-          - immortalwrt_ax6600
 
       CACHE_BUILD:
         description: '缓存加速'
@@ -38,7 +36,7 @@ on:
 
 # 定时触发编译(1,5,10,15,20,25,30早3点)
   schedule:
-    - cron: 0 17 4,9,14,19,24,31 * *
+    - cron: 0 19 4,9,14,19,24,31 * *
 
 # 点赞☆Star触发编译
 #  watch:
@@ -64,7 +62,7 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(
-          github.event_name == 'schedule' && '["Lean_x86_64","Lean_x86_64_Long","immortalwrt_x86_64","immortalwrt_ax6600"]' || 
+          github.event_name == 'schedule' && '["Lean_x86_64","immortalwrt_x86_64"]' || 
           format('["{0}"]', github.event.inputs.MODEL )
           )}}
 
@@ -412,7 +410,7 @@ jobs:
 
             =========================================
 
-        artifacts: ./artifact/firmware/*
+        artifacts: ./artifact/pvekvm/*
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@v2
