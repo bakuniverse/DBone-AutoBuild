@@ -68,7 +68,9 @@ sed -i "s/LEDE /ONE build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" $ZZZ          
 echo "uci set luci.main.mediaurlbase=/luci-static/argon" >> $ZZZ                      # 设置默认主题(如果编译可会自动修改默认主题的，有可能会失效)
 
 # ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●● #
-
+sed -i 's/192.168.1.1/192.168.100.252/g' openwrt/package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/192.168.100.252/g' /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt/package/base-files/files/bin/config_generate
+sed -i 's/256/1024/g' /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt/target/linux/x86/image/Makefile
 sed -i 's#localtime  = os.date()#localtime  = os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X")#g' package/lean/autocore/files/*/index.htm               # 修改默认时间格式
 sed -i 's#%D %V, %C#%D %V, %C Lean_x86_64#g' package/base-files/files/etc/banner               # 自定义banner显示
 # sed -i 's@list listen_https@# list listen_https@g' package/network/services/uhttpd/files/uhttpd.config               # 停止监听443端口
