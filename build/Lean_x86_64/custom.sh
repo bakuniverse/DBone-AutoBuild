@@ -61,16 +61,16 @@ else
 fi
 
 #
-sed -i 's#192.168.1.1#192.168.100.252#g' $NET                                                    # 定制默认IP
+sed -i 's/192.168.1.1/192.168.100.252/g' $NET                                                    # 定制默认IP
 sed -i 's#LEDE#OpenWrt-X86#g' $NET                                                     # 修改默认名称为OpenWrt-X86
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' $ZZZ                                             # 取消系统默认密码
 sed -i "s/LEDE /ONE build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" $ZZZ              # 增加自己个性名称
 echo "uci set luci.main.mediaurlbase=/luci-static/argon" >> $ZZZ                      # 设置默认主题(如果编译可会自动修改默认主题的，有可能会失效)
 
 # ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●● #
-sed -i 's/192.168.1.1/192.168.100.252/g' openwrt/package/base-files/luci2/bin/config_generate
-sed -i 's/192.168.1.1/192.168.100.252/g' /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt/package/base-files/files/bin/config_generate
-sed -i 's/256/1024/g' /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt/target/linux/x86/image/Makefile
+sed -i 's/192.168.1.1/192.168.100.252/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/192.168.100.252/g' package/base-files/files/bin/config_generate
+sed -i 's/256/1024/g' target/linux/x86/image/Makefile
 sed -i 's#localtime  = os.date()#localtime  = os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X")#g' package/lean/autocore/files/*/index.htm               # 修改默认时间格式
 sed -i 's#%D %V, %C#%D %V, %C Lean_x86_64#g' package/base-files/files/etc/banner               # 自定义banner显示
 # sed -i 's@list listen_https@# list listen_https@g' package/network/services/uhttpd/files/uhttpd.config               # 停止监听443端口
@@ -78,7 +78,7 @@ sed -i 's#%D %V, %C#%D %V, %C Lean_x86_64#g' package/base-files/files/etc/banner
 # sed -i 's#option database_generations 10#option database_generations 3#g' feeds/packages/net/nlbwmon/files/nlbwmon.config               # 修改流量统计数据周期
 # sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config               # 修改流量统计数据存放默认位置
 # sed -i 's#interval: 5#interval: 1#g' feeds/luci/applications/luci-app-wrtbwmon/htdocs/luci-static/wrtbwmon/wrtbwmon.js               # wrtbwmon默认刷新时间更改为1秒
-sed -i '/exit 0/i\ethtool -s eth0 speed 10000 duplex full' package/base-files/files//etc/rc.local               # 强制显示2500M和全双工（默认PVE下VirtIO不识别）
+sed -i '/exit 0/i\ethtool -s eth0 speed 10000 duplex full' package/base-files/files/etc/rc.local               # 强制显示2500M和全双工（默认PVE下VirtIO不识别）
 
 # ●●●●●●●●●●●●●●●●●●●●●●●●定制部分●●●●●●●●●●●●●●●●●●●●●●●● #
 
