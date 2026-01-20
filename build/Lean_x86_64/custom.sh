@@ -25,15 +25,15 @@ rm -rf feeds/luci/themes/luci-theme-argon
 # 移除 openwrt feeds 自带的核心库
 rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
 rm -rf package/passwall-packages
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
 
 # 移除 openwrt feeds 过时的luci版本
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf package/passwall-luci
 rm -rf package/passwall-luci2
-git clone https://github.com/xiaorouji/openwrt-passwall package/passwall-luci
-git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall-luci2
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall2 package/passwall-luci2
 sed -i 's/local RUN_NEW_DNSMASQ=1/local RUN_NEW_DNSMASQ=0/g' package/passwall-luci/luci-app-passwall/root/usr/share/passwall/app.sh
 sed -i 's/local RUN_NEW_DNSMASQ=1/local RUN_NEW_DNSMASQ=0/g' package/passwall-luci2/luci-app-passwall2/root/usr/share/passwall2/app.sh
 
