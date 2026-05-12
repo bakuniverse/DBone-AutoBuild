@@ -212,7 +212,7 @@ jobs:
           START_TIME=`date +'%Y-%m-%d %H:%M:%S'`
           echo "START_SECONDS=$(date --date="$START_TIME" +%s)" >> $GITHUB_ENV
 
-      - name: 加载源,定制文件并生成自定义配置
+      - name: 加载源
         run: |
           # 复制配置文件到源码目录
           cp -Rf `find ./ -maxdepth 1 -type d ! -path './openwrt' ! -path './'` openwrt
@@ -223,10 +223,11 @@ jobs:
          ls
          [ -e feeds.conf.default ] && mv feeds.conf.default openwrt/feeds.conf.default
          
-       - name: 加载源,定制文件并生成自定义配置1
+      - name: 定制文件并生成自定义配置
         run: |
           # 复制配置文件到源码目录
           cd openwrt
+          
           echo "执行单项脚本"
           if [ -f "${WORKPATH}/$CUSTOM_SH" ]; then
           (
