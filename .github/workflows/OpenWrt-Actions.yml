@@ -216,8 +216,17 @@ jobs:
         run: |
           # 复制配置文件到源码目录
           cp -Rf `find ./ -maxdepth 1 -type d ! -path './openwrt' ! -path './'` openwrt
-          cd openwrt
 
+          
+      - name: 下载${{matrix.target}}源码1
+        run: |
+         ls
+         [ -e feeds.conf.default ] && mv feeds.conf.default openwrt/feeds.conf.default
+         
+       - name: 加载源,定制文件并生成自定义配置1
+        run: |
+          # 复制配置文件到源码目录
+          cd openwrt
           echo "执行单项脚本"
           if [ -f "${WORKPATH}/$CUSTOM_SH" ]; then
           (
@@ -270,11 +279,6 @@ jobs:
           # if [ -f "$PROJECT_MIRRORS_FILE" ]; then
           #     sed -i '/.cn\//d; /tencent/d; /aliyun/d' "$PROJECT_MIRRORS_FILE"
           # fi
-          
-      - name: 下载${{matrix.target}}源码
-        run: |
-         ls
-         [ -e feeds.conf.default ] && mv feeds.conf.default openwrt/feeds.conf.default
     
       - name: 输出编译信息
         run: |
