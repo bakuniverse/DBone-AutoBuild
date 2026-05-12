@@ -72,8 +72,6 @@ jobs:
             # 手动触发判断
             [ "${{ github.event.inputs.Lean_x86_64 }}" = "true" ] && MODELS+=("Lean_x86_64")
             [ "${{ github.event.inputs.Lean_x86_64_Long }}" = "true" ] && MODELS+=("Lean_x86_64_Long")
-            [ "${{ github.event.inputs.immortalwrt_x86_64 }}" = "true" ] && MODELS+=("immortalwrt_x86_64")
-            [ "${{ github.event.inputs.immortalwrt_ax6600 }}" = "true" ] && MODELS+=("immortalwrt_ax6600")
           fi
           
           # 转换为 JSON 数组
@@ -272,7 +270,12 @@ jobs:
           # if [ -f "$PROJECT_MIRRORS_FILE" ]; then
           #     sed -i '/.cn\//d; /tencent/d; /aliyun/d' "$PROJECT_MIRRORS_FILE"
           # fi
-
+          
+      - name: 下载${{matrix.target}}源码
+        run: |
+         ls
+         [ -e feeds.conf.default ] && mv feeds.conf.default openwrt/feeds.conf.default
+    
       - name: 输出编译信息
         run: |
           cd openwrt
