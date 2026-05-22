@@ -67,7 +67,7 @@ jobs:
           MODELS=()
           # 定时触发编译全部
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            MODELS=("Lean_x86_64" "Lean_x86_64_Long" "immortalwrt_x86_64" "immortalwrt_ax6600")
+            MODELS=("Lean_x86_64" "Lean_x86_64_Long" )
           else
             # 手动触发判断
             [ "${{ github.event.inputs.Lean_x86_64 }}" = "true" ] && MODELS+=("Lean_x86_64")
@@ -499,7 +499,7 @@ jobs:
 
               🎉 [ ${{ env.FIRMWARE_MESSAGE }} ]固件下载
 
-          artifacts: ./artifact/firmware/*
+          artifacts: .//artifact/pvekvm/*
 
       - name: 删除运行记录
         uses: Mattraks/delete-workflow-runs@v2
