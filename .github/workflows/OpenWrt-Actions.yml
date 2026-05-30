@@ -20,14 +20,6 @@ on:
         description: '编译 Lean_x86_64_Long'
         type: boolean
         default: false
-      immortalwrt_x86_64:
-        description: '编译 immortalwrt_x86_64'
-        type: boolean
-        default: false
-      immortalwrt_ax6600:
-        description: '编译 immortalwrt_ax6600'
-        type: boolean
-        default: false
       CACHE_BUILD:
         description: '缓存加速'
         type: boolean
@@ -542,7 +534,7 @@ jobs:
                  (提示：非 x86_64 架构固件不包含 ISO 镜像)
 
           artifacts: |
-            ./artifact/firmware/*
+            ../artifact/pvekvm/*
             img-installer/output/*-installer-x86_64.iso
 
           # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
