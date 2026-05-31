@@ -299,67 +299,6 @@ CONFIG_TARGET_ROOTFS_PARTSIZE=548
 
 EOF
 
-# 固件压缩:
-cat >> .config <<EOF
-CONFIG_TARGET_IMAGES_GZIP=y
-EOF
-
-# 编译UEFI固件:
-cat >> .config <<EOF
-CONFIG_EFI_IMAGES=y
-EOF
-
-# IPv6支持:
-cat >> .config <<EOF
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ipv6helper=y
-EOF
-
-
-# USB3.0支持:
-cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-usb-ohci=y
-CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-CONFIG_PACKAGE_kmod-usb2=y
-CONFIG_PACKAGE_kmod-usb2-pci=y
-CONFIG_PACKAGE_kmod-usb3=y
-EOF
-
-
-# 禁用默认的 Dropbear
-cat >> .config <<EOF
-CONFIG_PACKAGE_dropbear=n
-EOF
-
-# 启用 OpenSSH-Server
-cat >> .config <<EOF
-CONFIG_PACKAGE_openssh-server=y # 安装 OpenSSH 服务
-CONFIG_PACKAGE_openssh-sftp-server=y # 安装 SFTP 支持
-EOF
-
-# 禁用 uhttpd ，替换 nginx
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-light=n
-CONFIG_PACKAGE_uhttpd=n
-CONFIG_PACKAGE_uhttpd-mod-ubus=n
-CONFIG_PACKAGE_luci-nginx=y
-CONFIG_PACKAGE_nginx-util=y
-
-# 文件共享相关(禁用):
-CONFIG_PACKAGE_luci-app-minidlna=n #miniDLNA服务
-CONFIG_PACKAGE_luci-app-vsftpd=n #FTP 服务器
-CONFIG_PACKAGE_luci-app-samba=n #网络共享
-CONFIG_PACKAGE_autosamba=n #网络共享
-CONFIG_PACKAGE_samba36-server=n #网络共享
-EOF
-
-
-# 其他软件包:
-cat >> .config <<EOF
-CONFIG_HAS_FPU=y
-EOF
-
-
 # 
 # ●●●●●●●●●●●●●●●●●●●●●●●●固件定制部分结束●●●●●●●●●●●●●●●●●●●●●●●● #
 # 
