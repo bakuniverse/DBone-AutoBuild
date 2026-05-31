@@ -206,6 +206,7 @@ CONFIG_PACKAGE_jansson=y
 CONFIG_PACKAGE_kmod-inet-diag=y
 # CONFIG_PACKAGE_kmod-ipt-conntrack-extra is not set
 # CONFIG_PACKAGE_kmod-ipt-fullconenat is not set
+# CONFIG_PACKAGE_kmod-ixgbe is not set
 # CONFIG_PACKAGE_kmod-lib-crc16 is not set
 CONFIG_PACKAGE_kmod-netlink-diag=y
 CONFIG_PACKAGE_kmod-nf-socket=y
@@ -218,10 +219,12 @@ CONFIG_PACKAGE_kmod-nft-socket=y
 CONFIG_PACKAGE_kmod-nft-tproxy=y
 # CONFIG_PACKAGE_kmod-oid-registry is not set
 # CONFIG_PACKAGE_kmod-scsi-core is not set
+CONFIG_PACKAGE_kmod-usb-ehci=y
 # CONFIG_PACKAGE_kmod-usb-storage is not set
 # CONFIG_PACKAGE_kmod-usb-storage-extras is not set
 # CONFIG_PACKAGE_kmod-usb-storage-uas is not set
 CONFIG_PACKAGE_kmod-usb-xhci-hcd=y
+CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb3=y
 # CONFIG_PACKAGE_ksmbd-server is not set
 CONFIG_PACKAGE_libatomic=y
