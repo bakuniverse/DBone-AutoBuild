@@ -193,6 +193,10 @@ CONFIG_PACKAGE_ipt2socks=y
 # CONFIG_PACKAGE_iptables-mod-conntrack-extra is not set
 # CONFIG_PACKAGE_iptables-mod-fullconenat is not set
 CONFIG_PACKAGE_jansson=y
+# CONFIG_PACKAGE_kmod-8139cp is not set
+# CONFIG_PACKAGE_kmod-8139too is not set
+# CONFIG_PACKAGE_kmod-amazon-ena is not set
+# CONFIG_PACKAGE_kmod-amd-xgbe is not set
 # CONFIG_PACKAGE_kmod-crypto-ccm is not set
 # CONFIG_PACKAGE_kmod-crypto-cmac is not set
 # CONFIG_PACKAGE_kmod-crypto-des is not set
@@ -299,6 +303,7 @@ CONFIG_TARGET_ROOTFS_PARTSIZE=548
 # CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir is not set
 # CONFIG_PACKAGE_simple-obfs-client is not set
 # CONFIG_PACKAGE_v2ray-plugin is not set
+
 
 EOF
 
