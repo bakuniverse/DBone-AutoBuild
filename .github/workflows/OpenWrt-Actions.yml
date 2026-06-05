@@ -535,10 +535,9 @@ jobs:
 
           artifacts: |
             ../artifact/pvekvm/*
-            img-installer/output/*-installer-x86_64.iso
 
           # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
-          artifactErrorsFailBuild: false
+          artifactErrorsFailBuild: true
 
       - name: 自动生成并保存固件与 ISO 下载直链
         if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_RELEASE == 'true' && always()
