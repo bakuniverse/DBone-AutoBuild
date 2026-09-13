@@ -12,7 +12,6 @@ echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 /etc/init.d/sshd restart
 
 # 修复OpenClash核心文件错误
-cp -rf /rom/etc/openclash/core/* /etc/openclash/core
 
 # 设置NTP时间服务器
 #uci add_list system.ntp.server='ntp.tencent.com'
