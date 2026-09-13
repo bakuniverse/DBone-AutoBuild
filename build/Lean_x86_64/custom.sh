@@ -172,6 +172,151 @@ touch ./.config
 
 # 编译x64固件:
 cat >> .config <<EOF
+CONFIG_TARGET_x86=y
+CONFIG_TARGET_x86_64=y
+CONFIG_TARGET_x86_64_DEVICE_generic=y
+CONFIG_NODEJS_20=y
+# CONFIG_NODEJS_24 is not set
+# CONFIG_PACKAGE_automount is not set
+CONFIG_PACKAGE_coreutils-nohup=y
+CONFIG_PACKAGE_coreutils-timeout=y
+CONFIG_PACKAGE_dns2socks=y
+CONFIG_PACKAGE_dnsmasq_full_nftset=y
+# CONFIG_PACKAGE_etherwake is not set
+# CONFIG_PACKAGE_firewall is not set
+CONFIG_PACKAGE_firewall4=y
+CONFIG_PACKAGE_geoview=y
+CONFIG_PACKAGE_haproxy=y
+# CONFIG_PACKAGE_iptables-mod-conntrack-extra is not set
+# CONFIG_PACKAGE_iptables-mod-fullconenat is not set
+# CONFIG_PACKAGE_iptables-mod-iprange is not set
+# CONFIG_PACKAGE_iptables-mod-socket is not set
+CONFIG_PACKAGE_jansson=y
+# CONFIG_PACKAGE_kmod-8139cp is not set
+# CONFIG_PACKAGE_kmod-8139too is not set
+# CONFIG_PACKAGE_kmod-amazon-ena is not set
+# CONFIG_PACKAGE_kmod-amd-xgbe is not set
+# CONFIG_PACKAGE_kmod-fs-exfat is not set
+# CONFIG_PACKAGE_kmod-fs-ext4 is not set
+# CONFIG_PACKAGE_kmod-fs-ntfs3 is not set
+CONFIG_PACKAGE_kmod-inet-diag=y
+# CONFIG_PACKAGE_kmod-ipt-conntrack-extra is not set
+# CONFIG_PACKAGE_kmod-ipt-fullconenat is not set
+# CONFIG_PACKAGE_kmod-ipt-iprange is not set
+# CONFIG_PACKAGE_kmod-ipt-socket is not set
+# CONFIG_PACKAGE_kmod-ixgbe is not set
+# CONFIG_PACKAGE_kmod-ixgbevf is not set
+# CONFIG_PACKAGE_kmod-lib-crc16 is not set
+CONFIG_PACKAGE_kmod-netlink-diag=y
+CONFIG_PACKAGE_kmod-nft-fib=y
+CONFIG_PACKAGE_kmod-nft-fullcone=y
+CONFIG_PACKAGE_kmod-nft-nat=y
+CONFIG_PACKAGE_kmod-nft-offload=y
+CONFIG_PACKAGE_kmod-nft-socket=y
+CONFIG_PACKAGE_kmod-nft-tproxy=y
+# CONFIG_PACKAGE_kmod-scsi-core is not set
+CONFIG_PACKAGE_kmod-usb-ehci=y
+# CONFIG_PACKAGE_kmod-usb-storage is not set
+# CONFIG_PACKAGE_kmod-usb-storage-extras is not set
+# CONFIG_PACKAGE_kmod-usb-storage-uas is not set
+CONFIG_PACKAGE_kmod-usb-xhci-hcd=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb3=y
+# CONFIG_PACKAGE_libcap-ng is not set
+CONFIG_PACKAGE_libltdl=y
+CONFIG_PACKAGE_liblua5.4=y
+# CONFIG_PACKAGE_libnetfilter-conntrack is not set
+# CONFIG_PACKAGE_libnfnetlink is not set
+CONFIG_PACKAGE_libnftnl=y
+# CONFIG_PACKAGE_luci-app-arpbind is not set
+# CONFIG_PACKAGE_luci-app-ddns is not set
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_luci-app-passwall2_Basic_Core_All=y
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy=y
+CONFIG_PACKAGE_luci-app-passwall2_Nftables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=y
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_GeoData is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Http_Proxy is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Mihomo is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_Nftables_Transparent_Proxy=y
+# CONFIG_PACKAGE_luci-app-upnp is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn=y
+CONFIG_PACKAGE_luci-theme-argon=y
+# CONFIG_PACKAGE_miniupnpd-iptables is not set
+CONFIG_PACKAGE_nftables-json=y
+CONFIG_PACKAGE_sing-box=y
+CONFIG_PACKAGE_tcping=y
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd is not set
+CONFIG_PACKAGE_xray-core=y
+CONFIG_QCOW2_IMAGES=y
+CONFIG_SING_BOX_BUILD_ACME=y
+CONFIG_SING_BOX_BUILD_CLASH_API=y
+CONFIG_SING_BOX_BUILD_GVISOR=y
+CONFIG_SING_BOX_BUILD_QUIC=y
+CONFIG_SING_BOX_BUILD_TAILSCALE=y
+CONFIG_SING_BOX_BUILD_UTLS=y
+CONFIG_SING_BOX_BUILD_WIREGUARD=y
+CONFIG_TARGET_KERNEL_PARTSIZE=78
+CONFIG_TARGET_ROOTFS_PARTSIZE=548
+CONFIG_ZLIB_OPTIMIZE_SPEED=y
+CONFIG_BIND_ENABLE_DOH=y
+# CONFIG_BIND_ENABLE_GSSAPI is not set
+CONFIG_PACKAGE_3proxy=y
+# CONFIG_PACKAGE_3proxy-lib-pam is not set
+# CONFIG_PACKAGE_3proxy-lib-pcre is not set
+# CONFIG_PACKAGE_3proxy-lib-ssl is not set
+# CONFIG_PACKAGE_3proxy-lib-strings is not set
+# CONFIG_PACKAGE_3proxy-lib-traffic is not set
+# CONFIG_PACKAGE_3proxy-lib-transparent is not set
+CONFIG_PACKAGE_bind-dig=y
+CONFIG_PACKAGE_bind-libs=y
+CONFIG_PACKAGE_dns2tcp=y
+CONFIG_PACKAGE_jq=y
+CONFIG_PACKAGE_liblzma=y
+CONFIG_PACKAGE_libpcap=y
+CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_liburcu=y
+CONFIG_PACKAGE_libuv=y
+CONFIG_PACKAGE_lua-neturl=y
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
+# CONFIG_PACKAGE_lzmadec is not set
+# CONFIG_PACKAGE_lzmainfo is not set
+CONFIG_PACKAGE_mihomo=y
+CONFIG_PACKAGE_nping=y
+# CONFIG_PACKAGE_shadowsocks-rust-sslocal is not set
+# CONFIG_PACKAGE_simple-obfs-client is not set
+# CONFIG_PACKAGE_v2ray-plugin is not set
+CONFIG_PACKAGE_xz=y
+CONFIG_PACKAGE_xz-utils=y
+# CONFIG_PACKAGE_xzdec is not set
+# CONFIG_PACKAGE_xzdiff is not set
+# CONFIG_PACKAGE_xzgrep is not set
+# CONFIG_PACKAGE_xzless is not set
+# CONFIG_PACKAGE_xzmore is not set
+# CONFIG_PCAP_HAS_NETFILTER is not set
+# CONFIG_PCAP_HAS_USB is not set
 
 EOF
 
