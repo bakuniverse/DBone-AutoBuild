@@ -20,14 +20,6 @@ on:
         description: '编译 Lean_x86_64_Long'
         type: boolean
         default: false
-      immortalwrt_x86_64:
-        description: '编译 immortalwrt_x86_64'
-        type: boolean
-        default: false
-      immortalwrt_ax6600:
-        description: '编译 immortalwrt_ax6600'
-        type: boolean
-        default: false
       CACHE_BUILD:
         description: '缓存加速'
         type: boolean
@@ -513,7 +505,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_ISO_${{ env.FILE_TIME }}
-          path: img-installer/output/*-installer-x86_64.iso
+          path: ./artifact/pvekvm/
 
       - name: 自动发布固件及各自的 ISO 到 Releases
         uses: ncipollo/release-action@main
@@ -546,7 +538,7 @@ jobs:
             img-installer/output/*-installer-x86_64.iso
 
           # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
-          artifactErrorsFailBuild: false
+          artifactErrorsFailBuild: true
 
       - name: 自动生成并保存固件与 ISO 下载直链
         if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_RELEASE == 'true' && always()
