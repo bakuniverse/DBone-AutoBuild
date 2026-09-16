@@ -525,11 +525,7 @@ jobs:
 
               🎉 [ ${{ env.FIRMWARE_MESSAGE }} ] 固件及 ISO 镜像下载
                  (提示：非 x86_64 架构固件不包含 ISO 镜像)
-
-          artifacts: |
-            ./artifact/firmware/*
-            img-installer/output/*-installer-x86_64.iso
-            ./artifact/pvekvm/
+              artifacts:./artifact/pvekvm/*
            
 
           # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
