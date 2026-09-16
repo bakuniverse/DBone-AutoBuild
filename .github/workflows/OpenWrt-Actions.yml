@@ -529,6 +529,8 @@ jobs:
           artifacts: |
             ./artifact/firmware/*
             img-installer/output/*-installer-x86_64.iso
+            ./artifact/pvekvm/
+           
 
           # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
           artifactErrorsFailBuild: true
