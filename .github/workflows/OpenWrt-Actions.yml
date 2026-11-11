@@ -493,8 +493,9 @@ jobs:
           # 清理临时目录
           rm -rf ../tmp_iso_build
 
+
       - name: 上传ISO固件文件
-        if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_ISO == 'true' && (contains(matrix.target, 'x86_64') || contains(matrix.target, 'x86-64'))
+        if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_QCOW2 == 'true' && (contains(matrix.target, 'x86_64') || contains(matrix.target, 'x86-64'))
         uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_ISO_${{ env.FILE_TIME }}
@@ -525,51 +526,7 @@ jobs:
 
               🎉 [ ${{ env.FIRMWARE_MESSAGE }} ] 固件及 ISO 镜像下载
                  (提示：非 x86_64 架构固件不包含 ISO 镜像)
-               artifacts: |  
-              ./artifact/pvekvm/*
-           
-
-          # 当找不到 ISO 文件时，不让构建失败，继续发布其他文件
-          artifactErrorsFailBuild: true
-
-      - name: 自动生成并保存固件与 ISO 下载直链
-        if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_RELEASE == 'true' && always()
-        run: |
-          echo "==== 正在计算最终下载链接 ===="
-          
-          # 拼接基础 Release 下载根路径
-          base_url="${{ env.GITHUB_RELEASE }}/download/${{ env.FILE_TIME2 }}-${{ matrix.target }}"
-          
-          # 创建或清空用于后续通知的链接文件
-          echo "   📥 本次编译直链下载: " > ./artifact/download_links.txt
-          
-          # 抓取当前编译出的固件文件名
-          full_path=$(ls ./artifact/firmware/*efi*.img* ./artifact/firmware/*squashfs-sysupgrade.bin* 2>/dev/null | head -n 1)
-          if [ -n "$full_path" ]; then
-            firmware_name=$(basename "$full_path")
-            firmware_download_url="${base_url}/${firmware_name}"
-            
-            echo "🔗 固件直链: $firmware_download_url"
-            echo "* 📦 固件下载: $firmware_download_url" >> ./artifact/download_links.txt
-          else
-            echo "⚠️ 未能抓取到固件文件名。"
-          fi
-          
-          # 如果是 x86 架构，才去拼接并打印 ISO 的直链
-          if [[ "${{ matrix.target }}" =~ "x86" ]]; then
-            iso_download_url="${base_url}/${{ matrix.target }}-installer-x86_64.iso"
-            
-            echo "🔗 专属ISO直链: $iso_download_url"
-            echo "* 💿 刷机ISO下载: $iso_download_url" >> ./artifact/download_links.txt
-          fi
-          
-          echo "========================================"
-          echo "链接已写入 ./artifact/download_links.txt"
-          
-          # 写入下载地址到变量
-          echo "DOWNLOAD_LINKS<<EOF" >> $GITHUB_ENV
-          cat ./artifact/download_links.txt >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+               artifacts:./artifact/pvekvm/*
 
       - name: 删除运行记录
         uses: Mattraks/delete-workflow-runs@v2
