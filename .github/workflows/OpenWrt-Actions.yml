@@ -521,11 +521,7 @@ jobs:
 
             🎉 [ ${{ env.FIRMWARE_MESSAGE }} ]固件下载
 
-            ━━━━━━━━━━━━━━━━━━━━
-
-            =========================================
-
-       artifacts: ./artifact/pvekvm/*
+             artifacts: ./artifact/pvekvm/*
 
       - name: 删除运行记录
         uses: Mattraks/delete-workflow-runs@v2
