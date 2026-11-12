@@ -503,30 +503,29 @@ jobs:
 
       - name: 自动发布固件及各自的 ISO 到 Releases
         uses: ncipollo/release-action@main
-        if: steps.compile.outcome == 'success' && env.BUILD_MOD == 'false' && env.UPLOAD_RELEASE == 'true'
+        if: steps.compile.outcome == 'success' && env.UPLOAD_RELEASE == 'true'
         with:
           name: ${{ env.FILE_TIME1 }} 「 ${{ env.FIRMWARE_MESSAGE }} 」
           tag: ${{ env.FILE_TIME2 }}-${{matrix.target}}
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          body: |            
-              ★  源码 : ${{ env.REPO_URL }}
-              ★  分支 : ${{ env.REPO_BRANCH }}
-              ★  感谢源码作者无私分享！
+          body: |                      
+            ★  源码 : ${{ env.REPO_URL }}
+            ★  分支 : ${{ env.REPO_BRANCH }}
+            ★  感谢源码作者无私分享！
 
-              🖥 内核版本：${{ env.KERNEL_PATCHVER }}
+            🖥 内核版本：${{ env.KERNEL_PATCHVER }}
 
-              🎈 编译时间：${{ env.FILE_TIME1 }}
+            🎈 编译时间：${{ env.FILE_TIME1 }}
 
-              ⏰ 编译用时：${{ env.BUILD_TIME }}
+            ⏰ 编译用时：${{ env.BUILD_TIME }}
 
-              📦 包含插件列表：
-              ${{ env.PACKAGED_PLUGINS }}
+            🎉 [ ${{ env.FIRMWARE_MESSAGE }} ]固件下载
 
-              ━━━━━━━━━━━━━━━━━━━━
+            ━━━━━━━━━━━━━━━━━━━━
 
-              🎉 [ ${{ env.FIRMWARE_MESSAGE }} ] 固件及 ISO 镜像下载
-                 (提示：非 x86_64 架构固件不包含 ISO 镜像)
-               artifacts:./artifact/pvekvm/*
+            =========================================
+
+       artifacts: ./artifact/pvekvm/*
 
       - name: 删除运行记录
         uses: Mattraks/delete-workflow-runs@v2
