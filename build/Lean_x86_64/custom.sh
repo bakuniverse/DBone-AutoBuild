@@ -20,7 +20,7 @@ git clone https://github.com/db-one/dbone-packages.git -b 23.05 package/dbone-pa
 # 删除部分默认包
 rm -rf feeds/luci/applications/luci-app-qbittorrent
 rm -rf feeds/luci/applications/luci-app-openclash
-rm -rf feeds/luci/themes/luci-theme-argon
+# rm -rf feeds/luci/themes/luci-theme-argon
 
 # 安装源
 ./scripts/feeds install -a -f
